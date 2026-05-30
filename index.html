@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Local Community Event Portal</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+  
+  <link rel="stylesheet" href="styles.css" />
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    /* CSS TASK 1 — Internal style: body background color */
+    body {
+      background-color: #faf7f0;
+    }
+
+    /* TASK 3 — Welcome banner blue background via internal CSS */
+    #welcomeBanner {
+      background: linear-gradient(135deg, #1a2744 0%, #2d4a8a 100%);
+      color: #ffffff;
+      padding: 3rem 2rem;
+      border-radius: 14px;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 8px 32px rgba(26, 39, 68, 0.25);
+    }
+
+    /* TASK 3 — .highlight class for visual emphasis on multiple elements */
+    .highlight {
+      background-color: #d4a843;
+      color: #1a2744;
+      padding: 0.15em 0.5em;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body onbeforeunload="return handleBeforeUnload(event)">
+
+  <nav id="mainNav">
+    <div class="nav-brand">🏛️ CommunityPortal</div>
+    <ul class="nav-links">
+      
+      <li><a href="#home">Home</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#register">Register</a></li>
+      <li><a href="#feedback-section">Feedback</a></li>
+      <li><a href="#contact">Contact</a></li>
+      
+      <li><a href="help.html" target="_blank">Help ↗</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  </nav>
+
+  <main>
+
+    <section id="home" class="section-container">
+
+      <div id="welcomeBanner">
+        
+        <h1 style="color: #d4a843; font-size: 2.4rem; margin-bottom: 0.8rem;">
+          Welcome to the Community Portal
+        </h1>
+        <p style="font-size: 1.1rem; margin-bottom: 1rem;">
+          Hello, <strong class="highlight">Resident!</strong> — Stay informed, get involved.
+          
+          <span style="color: #ff6b6b; font-weight: bold; display: block; margin-top: 0.6rem;">
+            🎉 Special: Free entry for first-time registrants this month!
+          </span>
+        </p>
+        
+        <p class="highlight" style="display:inline-block;">
+          Upcoming: Garden Festival · Tech Workshop · Cultural Fair
+        </p>
+      </div>
+
+      <div class="bulletin-wrapper">
+        
+        <h2 id="mainHeader">Community Bulletin Board</h2>
+        
+        <div class="multi-column-news">
+          <p>The city council has announced a rich series of community events scheduled
+          throughout this year. Residents are warmly encouraged to participate and share
+          their feedback with the organizing committee at each venue.</p>
+          <p>Local workshops on sustainable gardening, digital literacy, and arts & crafts
+          are now open for registration. Seats are strictly limited, so early sign-up
+          is strongly recommended for all interested participants.</p>
+          <p>The annual city parade will be held on the last Saturday of the month.
+          Enthusiastic volunteers are needed to help coordinate activities and guide guests.
+          Contact the events office for further information and sign-up details.</p>
+          <p>Emergency preparedness training sessions are available free of charge for all
+          residents. These comprehensive sessions are conducted by certified professionals
+          and remain open to every member of our community.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section-container">
+      <h2>📸 Past Community Events</h2>
+
+      <div class="table-wrapper">
+        <table class="gallery-table">
+          
+          <caption>Highlights from Our Recent Community Gatherings</caption>
+          <tbody>
+            
+            <tr>
+              <td>
+
+                <img
+                  src="https://picsum.photos/seed/festival2025/280/180"
+                  alt="City Garden Festival"
+                  title="City Garden Festival – April 2025"
+                  class="gallery-img"
+                  ondblclick="enlargeImage(this)"
+                />
+                <p class="img-caption">City Garden Festival</p>
+              </td>
+              <td>
+                <img
+                  src="https://picsum.photos/seed/techwork/280/180"
+                  alt="Digital Literacy Workshop"
+                  title="Digital Literacy Workshop – March 2025"
+                  class="gallery-img"
+                  ondblclick="enlargeImage(this)"
+                />
+                <p class="img-caption">Tech Workshop</p>
+              </td>
+              <td>
+                <img
+                  src="https://picsum.photos/seed/culturalfair/280/180"
+                  alt="Cultural Heritage Fair"
+                  title="Cultural Heritage Fair – February 2025"
+                  class="gallery-img"
+                  ondblclick="enlargeImage(this)"
+                />
+                <p class="img-caption">Cultural Heritage Fair</p>
+              </td>
+            </tr>
+            
+            <tr>
+              <td>
+                <img
+                  src="https://picsum.photos/seed/musicnight/280/180"
+                  alt="Community Music Night"
+                  title="Community Music Night – January 2025"
+                  class="gallery-img"
+                  ondblclick="enlargeImage(this)"
+                />
+                <p class="img-caption">Community Music Night</p>
+              </td>
+              <td>
+                <img
+                  src="https://picsum.photos/seed/cookingclass/280/180"
+                  alt="Cooking and Nutrition Workshop"
+                  title="Cooking & Nutrition Workshop – December 2024"
+                  class="gallery-img"
+                  ondblclick="enlargeImage(this)"
+                />
+                <p class="img-caption">Cooking & Nutrition</p>
+              </td>
+              <td>
+                <img
+                  src="https://picsum.photos/seed/sportsday2024/280/180"
+                  alt="Annual Community Sports Day"
+                  title="Annual Sports Day – November 2024"
+                  class="gallery-img"
+                  ondblclick="enlargeImage(this)"
+                />
+                <p class="img-caption">Annual Sports Day</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="imageLightbox" onclick="closeLightbox()">
+        <div class="lightbox-inner">
+          <img id="lightboxImg" src="" alt="Enlarged event photo" />
+          <p>Click outside or double-click another image to close</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" class="section-container">
+      <h2>📅 Upcoming Events</h2>
+
+      <div id="eventFilters" class="filter-bar">
+        <label for="categoryFilter">Filter by Category:</label>
+        <select id="categoryFilter" onchange="filterEventsByCategory(this.value)">
+          <option value="all">All Events</option>
+          <option value="music">Music</option>
+          <option value="workshop">Workshop</option>
+          <option value="sports">Sports</option>
+          <option value="culture">Culture</option>
+        </select>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search events… (press Enter)"
+          onkeydown="handleQuickSearch(event)"
+        />
+      </div>
+
+      <div id="loadingSpinner" class="spinner" style="display:none;">
+        <div class="spin-circle"></div>
+        <p>Loading events…</p>
+      </div>
+
+      <div id="eventList" class="event-grid"></div>
+    </section>
+
+    <section id="register" class="section-container">
+      <h2>📝 Event Registration</h2>
+
+      <form id="registrationForm" onsubmit="handleFormSubmit(event)" novalidate>
+
+        <div class="form-group">
+          <label for="fullName">Full Name *</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Enter your full name"
+            required
+            autofocus
+            class="form-input"
+          />
+          
+          <span class="field-error" id="nameError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+            class="form-input"
+          />
+          <span class="field-error" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="eventDate">Preferred Date *</label>
+          <input
+            type="date"
+            id="eventDate"
+            name="eventDate"
+            required
+            class="form-input"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="eventType">Event Type *</label>
+          <select
+            id="eventType"
+            name="eventType"
+            required
+            class="form-input"
+            onchange="saveEventPreference(this.value); showEventFee(this.value)"
+          >
+            <option value="">-- Select an Event --</option>
+            <option value="music">Music Concert</option>
+            <option value="workshop">Workshop</option>
+            <option value="sports">Sports Day</option>
+            <option value="culture">Cultural Fair</option>
+            <option value="garden">Garden Festival</option>
+          </select>
+          
+          <span id="eventFeeDisplay" class="fee-display"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+91 XXXXX XXXXX"
+            class="form-input"
+            onblur="validatePhone(this.value)"
+          />
+          <span class="field-error" id="phoneError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Additional Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Any special requirements or queries…"
+            rows="4"
+            class="form-input"
+          ></textarea>
+        </div>
+
+        <button type="submit" id="registerBtn" class="cta-button">
+          Register Now
+        </button>
+
+        <output id="formOutput" class="form-output" for="registrationForm"></output>
+
+      </form>
+    </section>
+
+    <section id="feedback-section" class="section-container">
+      <h2>💬 Share Your Feedback</h2>
+      <div class="feedback-form">
+
+        <div class="form-group">
+          <label for="feedbackEvent">Event You Attended:</label>
+          <select
+            id="feedbackEvent"
+            class="form-input"
+            onchange="displaySelectedEventFee(this.value)"
+          >
+            <option value="">-- Choose Event --</option>
+            <option value="music">Music Concert (₹200)</option>
+            <option value="workshop">Workshop (₹500)</option>
+            <option value="sports">Sports Day (Free)</option>
+            <option value="culture">Cultural Fair (₹150)</option>
+          </select>
+          <p id="feeInfo" class="fee-info"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="feedbackText">Your Feedback:</label>
+          <textarea
+            id="feedbackText"
+            class="form-input"
+            rows="4"
+            maxlength="500"
+            placeholder="Write your experience here…"
+            onkeyup="countCharacters(this)"
+          ></textarea>
+          <span id="charCount" class="char-count">0 / 500 characters</span>
+        </div>
+
+        <button class="cta-button" onclick="submitFeedback()">
+          Submit Feedback
+        </button>
+        <p id="feedbackConfirmation" class="confirmation-msg"></p>
+      </div>
+    </section>
+
+    <section id="video-section" class="section-container">
+      <h2>🎬 Event Promo Video</h2>
+      <p id="videoStatus" class="video-status">⏳ Preparing video…</p>
+
+      <div class="video-wrapper">
+        <video
+          id="promoVideo"
+          controls
+          oncanplay="videoReady()"
+          onplay="videoPlaying()"
+          onpause="videoPaused()"
+          style="width:100%; border-radius:10px; max-width:700px;"
+        >
+          
+          <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+          <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg" />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+    </section>
+
+    <section id="preferences" class="section-container">
+      <h2>⚙️ Your Saved Preferences</h2>
+      <p>Your favourite event type is remembered across visits using localStorage.</p>
+      <p id="savedPrefDisplay" class="pref-display"></p>
+      
+      <button class="cta-button secondary-btn" onclick="clearPreferences()">
+        🗑️ Clear Preferences
+      </button>
+    </section>
+
+    <section id="location" class="section-container">
+      <h2>📍 Find Nearby Events</h2>
+      <p>Grant location access so we can show you community events closest to you.</p>
+      
+      <button class="cta-button" onclick="findNearbyEvents()">
+        📍 Find Nearby Events
+      </button>
+      
+      <div id="locationResult" class="location-result"></div>
+    </section>
+
+    <section id="admin-table" class="section-container">
+      <h2>📋 Events Schedule</h2>
+      <div class="table-wrapper">
+        <table class="events-admin-table">
+          <thead>
+            <tr>
+              <th>Event Name</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th>Venue</th>
+              <th>Fee</th>
+              <th>Available Seats</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr><td>Music Concert</td><td>Music</td><td>Jun 10, 2025</td><td>City Amphitheatre</td><td>₹200</td><td>120</td></tr>
+            <tr><td>Digital Literacy Workshop</td><td>Workshop</td><td>Jun 15, 2025</td><td>Community Hall</td><td>₹500</td><td>40</td></tr>
+            <tr><td>Annual Sports Day</td><td>Sports</td><td>Jun 20, 2025</td><td>City Stadium</td><td>Free</td><td>200</td></tr>
+            <tr><td>Cultural Heritage Fair</td><td>Culture</td><td>Jun 25, 2025</td><td>Town Square</td><td>₹150</td><td>300</td></tr>
+            <tr><td>Garden Festival</td><td>Nature</td><td>Jul 5, 2025</td><td>Botanical Garden</td><td>₹100</td><td>150</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="contact" class="section-container">
+      <h2>📞 Contact Us</h2>
+      <div class="contact-grid">
+        
+        <div class="eventCard">
+          <h3>City Council Office</h3>
+          <p>📍 123 Civic Centre Road, City Hall</p>
+          <p>📞 +91 80 1234 5678</p>
+          <p>✉️ events@citycouncil.gov.in</p>
+        </div>
+        <div class="eventCard">
+          <h3>Office Hours</h3>
+          <p>Monday – Friday: 9 AM – 5 PM</p>
+          <p>Saturday: 10 AM – 2 PM</p>
+          <p>Sunday: Closed</p>
+        </div>
+        <div class="eventCard">
+          <h3>Quick Links</h3>
+          <ul>
+            
+            <li><a href="#events">View Events</a></li>
+            <li><a href="#register">Register Now</a></li>
+            <li><a href="help.html" target="_blank">Help & FAQs ↗</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2025 Local Community Event Portal &nbsp;|&nbsp; City Council</p>
+      <p>
+        <a href="help.html" target="_blank">Help &amp; Support</a>
+        &nbsp;|&nbsp;
+        <a href="#home">Back to Top ↑</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
