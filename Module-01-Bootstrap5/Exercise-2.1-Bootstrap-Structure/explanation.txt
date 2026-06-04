@@ -1,0 +1,32 @@
+Bootstrap Directory Structure
+
+1. CSS Folder
+   Purpose:
+   The CSS folder contains Bootstrap stylesheets that define the appearance of web pages. It is responsible for layouts, colors, typography, spacing, buttons, forms, and responsive design.
+
+Example Files:
+
+* bootstrap.css
+* bootstrap.min.css
+
+2. JS Folder
+   Purpose:
+   The JS folder contains JavaScript files required for interactive Bootstrap components such as modals, dropdowns, accordions, tooltips, and collapsible navigation bars.
+
+Example Files:
+
+* bootstrap.js
+* bootstrap.bundle.min.js
+
+3. Icons Folder
+   Purpose:
+   The icons folder contains Bootstrap Icons that can be used to display graphical symbols such as home, search, user, and social media icons.
+
+Examples:
+
+* Home Icon
+* Search Icon
+* User Icon
+
+Conclusion:
+The CSS folder handles styling, the JS folder provides interactive functionality, and the Icons folder supplies graphical icons used in web applications.

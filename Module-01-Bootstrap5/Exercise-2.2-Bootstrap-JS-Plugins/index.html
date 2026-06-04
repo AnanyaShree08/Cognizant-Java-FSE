@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Exercise 2.2 - JavaScript Plugins</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="container mt-5">
+
+        <h1 class="text-primary">
+            Bootstrap JavaScript Plugin Demo
+        </h1>
+
+        <p class="lead">
+            Click the button below to test Bootstrap's Collapse component.
+        </p>
+
+        <button class="btn btn-primary"
+                data-bs-toggle="collapse"
+                data-bs-target="#demoContent">
+            Show / Hide Details
+        </button>
+
+        <div class="collapse mt-3" id="demoContent">
+            <div class="card card-body">
+                Bootstrap JavaScript is working successfully!
+            </div>
+        </div>
+
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+1. Install Node.js
+
+2. Create Project Folder
+
+3. Run:
+   npm init -y
+
+4. Install Bootstrap:
+   npm install bootstrap
+
+5. Install Sass:
+   npm install sass --save-dev
+
+6. Create custom.scss
+
+7. Import Bootstrap:
+   @import "../node_modules/bootstrap/scss/bootstrap";
+
+8. Compile:
+   sass custom.scss custom.css
